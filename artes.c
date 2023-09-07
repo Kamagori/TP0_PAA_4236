@@ -63,6 +63,28 @@ void CriaAsterisco(Tela *tela, int quantos){
     }
 }
 
+void CriaMais(Tela *tela, int quantos){
+    int horizontal, vertical, controle = 0;
+
+    while(controle < quantos){
+        vertical = rand() % tela->linha;
+        horizontal = rand() % tela->coluna;
+
+        if (tela->matriz[vertical][horizontal] == ' ' && tela->matriz[vertical+1][horizontal] == ' ' && 
+        tela->matriz[vertical][horizontal+1] == ' ' && tela->matriz[vertical-1][horizontal] == ' ' && 
+        tela->matriz[vertical][horizontal-1] == ' ' && vertical < 20 && horizontal < 80){
+
+            tela->matriz[vertical][horizontal] = '*';
+            tela->matriz[vertical+1][horizontal] = '*';
+            tela->matriz[vertical][horizontal+1] = '*';
+            tela->matriz[vertical-1][horizontal] = '*';
+            tela->matriz[vertical][horizontal-1] = '*';
+            controle ++;
+
+        }
+    }
+}
+
 int EscolhaFigura(Tela *tela, int escolha)
 {
     if(escolha == 0)
@@ -77,6 +99,9 @@ int EscolhaFigura(Tela *tela, int escolha)
     {
         case 1:
             CriaAsterisco(tela, quantos);
+            break;
+        case 2:
+            CriaMais(tela, quantos );
             break;
     }
     ImprimeTela(tela);
