@@ -17,5 +17,6 @@ void CriaXis(Tela *tela, int quantos);
 void PintaFiguraAleatoria(Tela *tela, int quantos);
 void CriaTriforce(Tela *tela, int quantos);
 int EscolhaFigura(Tela *tela, int escolha);
+void ImprimeMenu();
 
 #endif //TP0_PAA_Artes_h
