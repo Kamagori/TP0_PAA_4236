@@ -80,10 +80,34 @@ void CriaMais(Tela *tela, int quantos){
             tela->matriz[vertical-1][horizontal] = '*';
             tela->matriz[vertical][horizontal-1] = '*';
             controle ++;
-
+            
         }
     }
 }
+
+void CriaXis(Tela *tela, int quantos){
+    int horizontal, vertical, controle = 0;
+
+    while(controle < quantos){
+        vertical = rand() % tela->linha;
+        horizontal = rand() % tela->coluna;
+
+        if (tela->matriz[vertical][horizontal] == ' ' && tela->matriz[vertical+1][horizontal+1] == ' ' && 
+        tela->matriz[vertical-1][horizontal+1] == ' ' && tela->matriz[vertical-1][horizontal-1] == ' ' && 
+        tela->matriz[vertical+1][horizontal-1] == ' ' && vertical < 20 && horizontal < 80){
+
+            tela->matriz[vertical][horizontal] = '*';
+            tela->matriz[vertical+1][horizontal+1] = '*';
+            tela->matriz[vertical-1][horizontal+1] = '*';
+            tela->matriz[vertical-1][horizontal-1] = '*';
+            tela->matriz[vertical+1][horizontal-1] = '*';
+            controle ++;
+            
+        }
+    }
+}
+
+
 
 int EscolhaFigura(Tela *tela, int escolha)
 {
@@ -103,6 +127,14 @@ int EscolhaFigura(Tela *tela, int escolha)
         case 2:
             CriaMais(tela, quantos );
             break;
+        case 3:
+            CriaXis(tela, quantos  );
+            break;
+        // case 4:
+        //     PintaFiguraAleatoria(tela, quantos  );
+        //     break;
+        // default:
+        //     CriaTriforce(tela, quantos);
     }
     ImprimeTela(tela);
     CriaTelaEmBranco(tela);
