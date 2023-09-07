@@ -7,6 +7,7 @@ int main(){
     tela.coluna = 80;
 
     CriaTelaEmBranco(&tela);
+    ImprimeTela(&tela);
     int escolha = 0;
 
     do{

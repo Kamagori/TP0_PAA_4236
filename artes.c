@@ -118,7 +118,6 @@ int EscolhaFigura(Tela *tela, int escolha)
     int quantos = 0;
     printf("Digite a quantidade de figuras: ");
     scanf("%d", &quantos);
-
     switch (escolha)
     {
         case 1:
