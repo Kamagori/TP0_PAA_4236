@@ -5,7 +5,7 @@
 
 void ImprimeMenu()
 {
-    printf("Digite qual figura: \n");
+    printf("Lista de opções para pintar na tela: \n");
     printf("[1] para * \n");
     printf("[2] para + \n");
     printf("[3] para X \n");
@@ -13,7 +13,7 @@ void ImprimeMenu()
     printf("[5] para Triforce\n");
     printf("[0] para sair\n");
 
-    printf("Digite aqui: ");
+    printf("Escolha qual figura deseja pintar: ");
 }
 
 void CriaTelaEmBranco(Tela *tela)
@@ -70,14 +70,14 @@ void CriaMais(Tela *tela, int quantos){
         vertical = rand() % tela->linha;
         horizontal = rand() % tela->coluna;
 
-        if (tela->matriz[vertical][horizontal] == ' ' && tela->matriz[vertical+1][horizontal] == ' ' && 
-        tela->matriz[vertical][horizontal+1] == ' ' && tela->matriz[vertical-1][horizontal] == ' ' && 
+        if (tela->matriz[vertical][horizontal] == ' ' && tela->matriz[vertical-1][horizontal] == ' ' && 
+        tela->matriz[vertical][horizontal+1] == ' ' && tela->matriz[vertical+1][horizontal] == ' ' && 
         tela->matriz[vertical][horizontal-1] == ' ' && vertical < 20 && horizontal < 80){
 
             tela->matriz[vertical][horizontal] = '*';
-            tela->matriz[vertical+1][horizontal] = '*';
-            tela->matriz[vertical][horizontal+1] = '*';
             tela->matriz[vertical-1][horizontal] = '*';
+            tela->matriz[vertical][horizontal+1] = '*';
+            tela->matriz[vertical+1][horizontal] = '*';
             tela->matriz[vertical][horizontal-1] = '*';
             controle ++;
             
@@ -92,15 +92,15 @@ void CriaXis(Tela *tela, int quantos){
         vertical = rand() % tela->linha;
         horizontal = rand() % tela->coluna;
 
-        if (tela->matriz[vertical][horizontal] == ' ' && tela->matriz[vertical+1][horizontal+1] == ' ' && 
-        tela->matriz[vertical-1][horizontal+1] == ' ' && tela->matriz[vertical-1][horizontal-1] == ' ' && 
-        tela->matriz[vertical+1][horizontal-1] == ' ' && vertical < 20 && horizontal < 80){
+        if (tela->matriz[vertical][horizontal] == ' ' && tela->matriz[vertical-1][horizontal+1] == ' ' && 
+        tela->matriz[vertical+1][horizontal+1] == ' ' && tela->matriz[vertical+1][horizontal-1] == ' ' && 
+        tela->matriz[vertical-1][horizontal-1] == ' ' && vertical < 20 && horizontal < 80){
 
             tela->matriz[vertical][horizontal] = '*';
-            tela->matriz[vertical+1][horizontal+1] = '*';
             tela->matriz[vertical-1][horizontal+1] = '*';
-            tela->matriz[vertical-1][horizontal-1] = '*';
+            tela->matriz[vertical+1][horizontal+1] = '*';
             tela->matriz[vertical+1][horizontal-1] = '*';
+            tela->matriz[vertical-1][horizontal-1] = '*';
             controle ++;
             
         }
