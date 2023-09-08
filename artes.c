@@ -132,8 +132,8 @@ void CriaTriforce(Tela *tela, int quantos){
         vertical = rand() % tela->linha;
         horizontal = rand() % tela->coluna;
         if (tela->matriz[vertical][horizontal] == ' ' && tela->matriz[vertical][horizontal+1] == ' ' && 
-        tela->matriz[vertical-1][horizontal] == ' ' && tela->matriz[vertical-1][horizontal+1] == ' ' && 
-        tela->matriz[vertical-1][horizontal+2] == ' ' && tela->matriz[vertical-1][horizontal+3] == ' ' && 
+        tela->matriz[vertical+1][horizontal] == ' ' && tela->matriz[vertical+1][horizontal-1] == ' ' && 
+        tela->matriz[vertical+1][horizontal+1] == ' ' && tela->matriz[vertical+1][horizontal+2] == ' ' && 
         vertical < 20 && horizontal < 80){
             tela->matriz[vertical][horizontal] = '/';
             tela->matriz[vertical][horizontal+1] = '\\';
